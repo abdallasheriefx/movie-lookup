@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  --color-primary-950: hsl(249, 100%, 4%);
+  --color-secondary-900: hsl(249, 49%, 8%);
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --container-xs: 18rem;
+}
+
+@layer base {
+  body {
+    @apply bg-primary-950 font-dm-sans h-screen w-screen py-10;
+    background-image: url('/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+@layer components {
+  .search-bar {
+    @apply bg-secondary-900 mx-auto flex w-full max-w-3xl items-center gap-4 rounded-lg px-8 py-6;
+    & img {
+      @apply h-5 w-5;
+    }
+    & input {
+      @apply w-full bg-transparent text-gray-300 placeholder-gray-300 outline-hidden;
+    }
+  }
+}
+
+@utility text-gradient {
+  @apply bg-linear-to-r from-[hsl(256,100%,89%)] to-[hsl(257,100%,77%)] bg-clip-text text-transparent;
+}
